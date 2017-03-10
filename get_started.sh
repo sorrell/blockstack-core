@@ -119,7 +119,7 @@ if [ $? -ne 0 ]; then
    exit_with_error "Failed to set up virtualenv.  Logfile in $LOGPATH"
 fi
 
-source "$VENV_DIR"/bin/activate || exit_with_error "Failed to activate virtualenv.  Logfile in $LOGPATH"
+. "$VENV_DIR"/bin/activate || exit_with_error "Failed to activate virtualenv.  Logfile in $LOGPATH"
 
 pip install blockstack 2>&1 | tee -a "$LOGPATH" || exit_with_error "Failed to install blockstack.  Logfile in $LOGPATH"
 
